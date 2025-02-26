@@ -17,4 +17,4 @@ website:
 
 format:
   html:
-    theme: lumen
+    theme: slate
