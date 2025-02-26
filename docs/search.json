@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "create-dataset.html",
+    "href": "create-dataset.html",
+    "title": "Create the Gapminder dataset",
+    "section": "",
+    "text": "# Import necessary libraries\nimport pandas as pd\nfrom gapminder import gapminder\n\n# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'\ngapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',\n                                      'pop': 'population_millions', \n                                      'gdpPercap': 'gdp_per_capita'})\n\n# Convert population to millions\ngapminder['population_millions'] = gapminder['population_millions'] / 1_000_000\n\n# Create a new pandas DataFrame from the modified gapminder data\ngapminder_df = pd.DataFrame(gapminder)\n\n# Save the DataFrame as a CSV file\ngapminder_df.to_csv('gapminder.csv', index=False)\n\n# Print the first 3 rows of the DataFrame\nprint(gapminder_df.head(3))\n\n       country continent  year  life_expectancy  population_millions  \\\n0  Afghanistan      Asia  1952           28.801             8.425333   \n1  Afghanistan      Asia  1957           30.332             9.240934   \n2  Afghanistan      Asia  1962           31.997            10.267083   \n\n   gdp_per_capita  \n0      779.445314  \n1      820.853030  \n2      853.100710"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "This page explores the relationship between life expectancy and GDP per capita. We analyze data from 142 countries over several decades to see how economic prosperity impacts lifespan.\nimport pandas as pd import matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "life-gdp.html#relationship-between-life-expectancy-and-gdp-per-capita",
+    "href": "life-gdp.html#relationship-between-life-expectancy-and-gdp-per-capita",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "This page explores the relationship between life expectancy and GDP per capita. We analyze data from 142 countries over several decades to see how economic prosperity impacts lifespan.\nimport pandas as pd import matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "This page examines trends in life expectancy, GDP per capita, and population for a selected country over time.\nimport pandas as pd import matplotlib.pyplot as plt\ngapminder = pd.read_csv(“gapminder.csv”)\ncountry = “United States” country_data = gapminder[gapminder[“country”] == country]\nplt.figure(figsize=(10,6)) plt.plot(country_data[“year”], country_data[“life_expectancy”], label=“Life Expectancy”, marker=“o”) plt.plot(country_data[“year”], country_data[“gdp_per_capita”], label=“GDP per Capita”, marker=“s”) plt.plot(country_data[“year”], country_data[“population_millions”], label=“Population”, marker=“^”)\nplt.xlabel(“Year”) plt.ylabel(“Value”) plt.title(f”Trends in {country}: Life Expectancy, GDP per Capita, and Population”) plt.legend() plt.show()"
+  },
+  {
+    "objectID": "country.html#analysis-for-a-specific-country-united-states",
+    "href": "country.html#analysis-for-a-specific-country-united-states",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "This page examines trends in life expectancy, GDP per capita, and population for a selected country over time.\nimport pandas as pd import matplotlib.pyplot as plt\ngapminder = pd.read_csv(“gapminder.csv”)\ncountry = “United States” country_data = gapminder[gapminder[“country”] == country]\nplt.figure(figsize=(10,6)) plt.plot(country_data[“year”], country_data[“life_expectancy”], label=“Life Expectancy”, marker=“o”) plt.plot(country_data[“year”], country_data[“gdp_per_capita”], label=“GDP per Capita”, marker=“s”) plt.plot(country_data[“year”], country_data[“population_millions”], label=“Population”, marker=“^”)\nplt.xlabel(“Year”) plt.ylabel(“Value”) plt.title(f”Trends in {country}: Life Expectancy, GDP per Capita, and Population”) plt.legend() plt.show()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Gapminder Analysis",
+    "section": "",
+    "text": "Welcome to the Gapminder dataset analysis. This dataset contains information on life expectancy, GDP per capita, and population across 142 countries from 1952 to 2007.\n\nPages:\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis"
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "This page explores how life expectancy varies with population size across different countries and years.\nimport pandas as pd import seaborn as sns import matplotlib.pyplot as plt\ngapminder = pd.read_csv(“gapminder.csv”)\nplt.figure(figsize=(10,6)) sns.scatterplot(data=gapminder, x=“population_millions”, y=“life_expectancy”, hue=“year”, alpha=0.6) plt.xscale(“log”) plt.xlabel(“Population (millions, log scale)”) plt.ylabel(“Life Expectancy”) plt.title(“Life Expectancy vs Population”) plt.show()"
+  },
+  {
+    "objectID": "life-population.html#relationship-between-life-expectancy-and-population",
+    "href": "life-population.html#relationship-between-life-expectancy-and-population",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "This page explores how life expectancy varies with population size across different countries and years.\nimport pandas as pd import seaborn as sns import matplotlib.pyplot as plt\ngapminder = pd.read_csv(“gapminder.csv”)\nplt.figure(figsize=(10,6)) sns.scatterplot(data=gapminder, x=“population_millions”, y=“life_expectancy”, hue=“year”, alpha=0.6) plt.xscale(“log”) plt.xlabel(“Population (millions, log scale)”) plt.ylabel(“Life Expectancy”) plt.title(“Life Expectancy vs Population”) plt.show()"
+  }
+]
