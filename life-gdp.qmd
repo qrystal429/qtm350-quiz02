@@ -8,8 +8,10 @@ format: html
 This page explores the relationship between life expectancy and GDP per capita. We analyze data from 142 countries over several decades to see how economic prosperity impacts lifespan.
 
 ```{python}
+#| label: plot
+#| warning: false
 #| echo: true
-#| eval: true 
+#| eval: true
 import pandas as pd
 import matplotlib.pyplot as plt
 

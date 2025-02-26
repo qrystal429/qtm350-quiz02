@@ -8,8 +8,10 @@ format: html
 This page examines trends in life expectancy, GDP per capita, and population for a selected country over time.
 
 ```{python}
+#| label: plot
+#| warning: false
 #| echo: true
-#| eval: true 
+#| eval: true
 import pandas as pd
 import matplotlib.pyplot as plt
 

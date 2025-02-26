@@ -8,8 +8,10 @@ format: html
 This page explores how life expectancy varies with population size across different countries and years.
 
 ```{python}
+#| label: plot
+#| warning: false
 #| echo: true
-#| eval: true 
+#| eval: true
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
