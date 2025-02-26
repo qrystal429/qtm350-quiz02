@@ -8,6 +8,8 @@ format: html
 This page explores how life expectancy varies with population size across different countries and years.
 
 ```{python}
+#| echo: true
+#| eval: true 
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -21,3 +23,4 @@ plt.xlabel("Population (millions, log scale)")
 plt.ylabel("Life Expectancy")
 plt.title("Life Expectancy vs Population")
 plt.show()
+```
